@@ -34,22 +34,46 @@
 
    <div class="container">
       <div class="container__left framed-golden-2">
-
          <div class="score_box frame">
             <span id="score_points">Win: 0 | Lose: 0</span>
          </div>
+
          <div class="menu__avatar">
             <img id="card-image">
          </div>
+
          <div class="card_details frame">
             <p id="card-name">a</p>
             <p id="card-type">a</p>
          </div>
-
       </div>
 
       <div class="container__right">
-         <div class="card-box__container"></div>
+         <div class="card-box__container">
+            <div class="card-box framed" id="computer-cards"></div>
+
+            <div class="card-versus__container">
+               <div class="versus-top">
+                  <div class="card-infield">
+                     <img id="player-field-card" height="180px" width="125px">
+                  </div>
+
+                  <img height="100px" src="src/assets/icons/millenium2.png">
+
+                  <div class="card-infield">
+                     <img id="computer-field-card" height="180px" width="125px">
+                  </div>
+               </div>
+
+               <div class="versus-bottom">
+                  <button id="next-duel" class="rpgui-button" onclick="resetDuel()">
+                     GANHOU
+                  </button>
+               </div>
+            </div>
+
+            <div class="card-box framed" id="player-cards"></div>
+         </div>
       </div>
    </div>
 

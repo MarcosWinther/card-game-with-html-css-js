@@ -57,24 +57,30 @@ async function getRandomCardId() {
    return cardData[randomIndex].id;
 }
 
-async function createCardImage(IdCard, fieldSide) {
+async function createCardImage(idCard, fieldSide) {
    const cardImage = document.createElement('img');
    cardImage.setAttribute('height', '100px');
    cardImage.setAttribute('src', './src/assets/icons/card-back.png');
-   cardImage.setAttribute('data-id', IdCard);
+   cardImage.setAttribute('data-id', idCard);
    cardImage.classList.add('card');
 
    if (fieldSide === playerSides.player1) {
+      cardImage.addEventListener('mouseover', () => {
+         drawSelectCard(idCard);
+      });
+
       cardImage.addEventListener('click', () => {
          setCardsField(cardImage.getAttribute('data-id'));
       });
    }
 
-   cardImage.addEventListener('mouseover', () => {
-      drawSelectCard(IdCard);
-   });
-
    return cardImage;
+}
+
+async function drawSelectCard(index) {
+   state.cardSprites.avatar.src = cardData[index].img;
+   state.cardSprites.name.innerText = cardData[index].name;
+   state.cardSprites.type.innerText = `Attribute: ${cardData[index].type}`;
 }
 
 async function drawCards(cardsNumbers, fieldSide) {

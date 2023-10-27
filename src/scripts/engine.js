@@ -34,28 +34,84 @@ const pathImages = './src/assets/icons/';
 const cardData = [
    {
       id: 0,
-      name: 'Blue Eyes White Dragon',
-      type: 'Paper',
-      img: `${pathImages}dragon.png`,
-      WinOf: [1],
-      LoseOf: [2],
+      name: 'Windy',
+      type: 'Windy',
+      img: `${pathImages}windy.jpg`,
+      WinOf: [1, 3, 4],
+      LoseOf: [2, 5, 6, 7, 8, 9],
    },
    {
       id: 1,
-      name: 'Dark Magician',
-      type: 'Rock',
-      img: `${pathImages}magician.png`,
+      name: 'Shadow',
+      type: 'Shadow',
+      img: `${pathImages}shadow.jpg`,
       WinOf: [2],
-      LoseOf: [0],
+      LoseOf: [0, 3, 4, 5, 6, 7, 8, 9],
    },
    {
       id: 2,
-      name: 'Exodia',
-      type: 'Scissors',
-      img: `${pathImages}exodia.png`,
-      WinOf: [0],
+      name: 'Thunder',
+      type: 'Thunder',
+      img: `${pathImages}thunder.jpg`,
+      WinOf: [0, 3, 4, 5, 6, 7, 9],
+      LoseOf: [1, 8],
+   },
+   {
+      id: 3,
+      name: 'Watery',
+      type: 'Watery',
+      img: `${pathImages}watery.jpg`,
+      WinOf: [4],
+      LoseOf: [0, 1, 2, 5, 6, 7, 8, 9],
+   },
+   {
+      id: 4,
+      name: 'Firey',
+      type: 'Firey',
+      img: `${pathImages}firey.jpg`,
+      WinOf: [1, 5, 6],
+      LoseOf: [0, 2, 3, 7, 8, 9],
+   },
+   {
+      id: 5,
+      name: 'Power',
+      type: 'Power',
+      img: `${pathImages}power.jpg`,
+      WinOf: [0, 1, 3, 4, 6],
+      LoseOf: [2, 7, 8, 9],
+   },
+   {
+      id: 6,
+      name: 'Fight',
+      type: 'Fight',
+      img: `${pathImages}fight.jpg`,
+      WinOf: [0, 1, 3, 4],
+      LoseOf: [2, 5, 7, 8, 9],
+   },
+   {
+      id: 7,
+      name: 'Time',
+      type: 'Time',
+      img: `${pathImages}time.jpg`,
+      WinOf: [0, 1, 3, 4, 5, 6, 8, 9],
+      LoseOf: [2],
+   },
+   {
+      id: 8,
+      name: 'Silent',
+      type: 'Silent',
+      img: `${pathImages}silent.jpg`,
+      WinOf: [0, 2, 3, 4, 5, 6, 7, 9],
       LoseOf: [1],
-   }
+   },
+   {
+      id: 9,
+      name: 'Dash',
+      type: 'Dash',
+      img: `${pathImages}dash.jpg`,
+      WinOf: [0, 1, 3, 4, 5, 6],
+      LoseOf: [2, 7, 8],
+   },
 ];
 
 async function getRandomCardId() {
@@ -66,7 +122,7 @@ async function getRandomCardId() {
 async function createCardImage(idCard, fieldSide) {
    const cardImage = document.createElement('img');
    cardImage.setAttribute('height', '100px');
-   cardImage.setAttribute('src', './src/assets/icons/card-back.png');
+   cardImage.setAttribute('src', './src/assets/icons/card-back.jpg');
    cardImage.setAttribute('data-id', idCard);
    cardImage.classList.add('card');
 
